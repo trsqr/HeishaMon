@@ -1,21 +1,22 @@
-[![Jion us on Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-orange)](https://join.slack.com/t/panasonic-wemos/shared_invite/enQtODg2MDY0NjE1OTI3LTgzYjkwMzIwNTAwZTMyYzgwNDQ1Y2QxYjkwODg3NjMyN2MyM2ViMDM3Yjc3OGE3MGRiY2FkYzI4MzZiZDVkNGE)
+[![Join us on Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-orange)](https://join.slack.com/t/panasonic-wemos/shared_invite/enQtODg2MDY0NjE1OTI3LTgzYjkwMzIwNTAwZTMyYzgwNDQ1Y2QxYjkwODg3NjMyN2MyM2ViMDM3Yjc3OGE3MGRiY2FkYzI4MzZiZDVkNGE)
 
 
 # Panasonic H Series Aquarea air-water heat pump protocol
 
 Eine deutschsprachige [README_DE.md](README_DE.md) findest du hier. \
-Een nederlandse vertaling [README_NL.md](README_NL.md) vind je hier.
+Een nederlandse vertaling [README_NL.md](README_NL.md) vind je hier. \
+Suomen kielellä [README_FI.md](README_FI.md) luettavissa täällä.
 
-*Help on translation to other languages are welcome.*
+*Help on translation to other languages is welcome.*
 
 # Current releases
 Current beta release is version 0.6b. The [compiled binary](binaries/HeishaMon.ino.d1-v0.6.bin) can be installed on a Wemos D1 mini(and generally on any ESP8266 based board - but without guarantee ). Or download the code compile it yourself (see required libraries below).
 
 # Using the software
-The current arduino beta image is able to communicate with  the Panasonic Aquarea H-series (and most probably from new J-series as well ,since PCB look identical). \
+The current arduino beta image is able to communicate with the Panasonic Aquarea H-series (and most probably with the new J-series as well, since PCB looks identical). \
 If you want to compile this image yourself be sure to use the mentioned libraries and support for a filesystem on the esp8266 so select the correct flash option in arduino ide for that.
 
-When starting for the first time a open-wifi-hotspot will be visible allowing you to config your wifi network and your mqtt server. \
+When starting for the first time an open-wifi-hotspot will be visible allowing you to configure your wifi network and your mqtt server. Configuration page will be located at http://192.168.4.1 . \
 If you ever want to factory reset, just double reset the esp8266 within 0.1 second. It will then format the filesystem and remove the wifi setting and start the wifi hotspot again. \
 After configuring and booting the image will be able to read and talk to your heatpump. The GPIO13/GPIO15 connection will be used for communications so you can keep your computer/uploader connected to the board if you want. \
 Serial 1 (GPIO2) can be used to connect another serial line (GND and TX from the board only) to read some debugging data.
@@ -33,11 +34,11 @@ A json output of all received data (heatpump and 1wire) is available at the url 
 Within the 'integrations' folder you can find examples how to connect your automation platform to the HeishaMon.
 
 # Further information
-Below you can find some technical details about the project. How to build your own cables. How to build you own PCB etc.
+Below you can find some technical details about the project. How to build your own cables. How to build your own PCB etc.
 
 ## Connection details:
-Comunication can be established thru one of sockets: CN-CNT or CN-NMODE, with are hardwired/shortcuted ,so there is no possible to use them booth at the same time for more then one device (except sniffing). \
-Comunication parameters: TTL 5V UART 9600,8,E,1  \
+Communication can be established thru one of the two sockets: CN-CNT or CN-NMODE, which are hardwired/shortcut, so there is no possibility to use them both at the same time for more then one device (except sniffing). \
+Communication parameters: TTL 5V UART 9600,8,E,1  \
  \
 CN-CNT Pin-out (from top to bottom) \
 1 - +5V (250mA)  \
